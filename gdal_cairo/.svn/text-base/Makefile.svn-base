@@ -1,0 +1,11 @@
+CXXFLAGS= -g `pkg-config --cflags gtk+-2.0 libxml-2.0 gdal`
+LDFLAGS= -g `pkg-config --libs gtk+-2.0 libxml-2.0 gdal`
+
+all: gdal_cairo.o
+
+gdal_pixbuf.o: gdal_cairo.cpp gdal_cairo.h
+	$(CXX) -c gdal_cairo.cpp $(CXXFLAGS)
+
+clean::
+	$(RM) *.o
+
