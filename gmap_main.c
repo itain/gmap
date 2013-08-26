@@ -305,10 +305,10 @@ int main(int argc, char **argv) {
 #if 1
 	/* First mapview */
 	mapset = mapset_from_file(
-		"refmaps/maps50.xml"
+		//"refmaps/maps50.xml"
 		//"maps250.xml"
 		//"world_map.xml"
-		//"political_world.xml"
+		"refmaps/political_world2.xml"
 		//"physical_world.xml"
 		);
 	if(mapset) {

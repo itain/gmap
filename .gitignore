@@ -1,2 +1,8 @@
 *.o
-
+*.swp
+oldstuff
+s1
+GPS-Tracks-Backup
+gmap
+gpxfiles
+tags

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<MapSet>
+  <Name>Political Map of the World, November 2011</Name>
+  <Description>
+File URL: http://upload.wikimedia.org/wikipedia/commons/7/75/CIA_WorldFactBook-Political_world.png
+Attribution: By CIA World Factbook (CIA - The World Factbook -- Reference Maps) [Public domain], via Wikimedia Commons
+(Modified to 3 channels - no transparency)
+  </Description>
+  <Attachments/>
+  <Projection>PROJCS["unnamed",PROJECTION["Robinson"],PARAMETER["longitude_of_center",10],PARAMETER["false_easting",0],PARAMETER["false_northing",0]]</Projection>
+  <Bounds Left="-17002423.615872093" Right="17007808.724021282" Top="8633374.890622197" Bottom="-8634299.118784828"/>
+  <Scale Default="7227.109608959"/>
+  <Map Filename="CIA_WorldFactBook-Political_world.png">
+    <ImageSize Width="4792" Height="2604" BPP="24"/>
+    <GeoTransform V0="-17045939.865439765" V1="7228.137810481" V2="0.771846622" V3="10011640.946741674" V4="0.448286253" V5="-7227.109595056"/>
+    <Calibration>
+      <CalibrationPoint MapX="2227.499980087" MapY="1385.479174128" GeoX="-944768.518362513" GeoY="0.000000000" Valid="True"/>
+      <CalibrationPoint MapX="2232.510000000" MapY="941.490000000" GeoX="-906977.757355479" GeoY="3208557.611503894" Valid="True"/>
+      <CalibrationPoint MapX="2609.170000000" MapY="941.540000000" GeoX="1813955.514710959" GeoY="3208557.611503894" Valid="True"/>
+      <CalibrationPoint MapX="2985.572778338" MapY="941.608534279" GeoX="4534888.786777397" GeoY="3208557.611503894" Valid="True"/>
+      <CalibrationPoint MapX="3403.480000000" MapY="1385.510000000" GeoX="7558148.146900105" GeoY="0.000000000" Valid="True"/>
+      <CalibrationPoint MapX="4115.070000000" MapY="1829.530000000" GeoX="12697688.602976711" GeoY="-3208557.611503894" Valid="True"/>
+      <CalibrationPoint MapX="1103.190000000" MapY="1829.500000000" GeoX="-9069777.573554793" GeoY="-3208557.611503894" Valid="True"/>
+      <CalibrationPoint MapX="687.977427964" MapY="2262.002830956" GeoX="-12071874.492691690" GeoY="-6336038.681964611" Valid="True"/>
+      <CalibrationPoint MapX="3193.037810745" MapY="2262.000847714" GeoX="6035937.246345845" GeoY="-6336038.681964611" Valid="True"/>
+      <CalibrationPoint MapX="1314.570000000" MapY="508.460000000" GeoX="-7544921.557932307" GeoY="6336038.681964611" Valid="True"/>
+    </Calibration>
+    <Rect X="6" Y="191" Width="4705" Height="2389"/>
+    <Crop>
+      <Point X="6.000000000" Y="191.000000000"/>
+      <Point X="4711.000000000" Y="191.000000000"/>
+      <Point X="4711.000000000" Y="2580.000000000"/>
+      <Point X="6.000000000" Y="2580.000000000"/>
+    </Crop>
+  </Map>
+</MapSet>

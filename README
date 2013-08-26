@@ -1,0 +1,9 @@
+Display raster maps and GPX files.
+
+This is an old project (circa 2007).
+
+Written and tested on Fedora Linux.
+using GDAL.
+
+Gmap can be used to display a set of raster maps (possibly scanned).
+There is a utility to align multiple maps (maps in a mapset must use the same projection).

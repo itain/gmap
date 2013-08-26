@@ -21,7 +21,7 @@ SRCS=$(GMAP_FILES:.o=.c)
 
 all: subdirs gmap # xml s1
 
-gmap: $(GMAP_FILES)
+gmap: $(GMAP_FILES) $(GDAL_DRIVERS)
 	$(CXX) -o gmap $(GMAP_FILES) $(LDFLAGS) $(GDAL_DRIVERS) -lm
 
 #S1_FILES=s1.o s1_gl.o
