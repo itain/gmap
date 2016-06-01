@@ -87,7 +87,7 @@ mapwindow_show_near_objects(struct MapView *mapview) {
 static gboolean
 mouse_move(GtkWidget *widget, GdkEventMotion *event, struct MapView *v) {
 	gdouble _x , _y;
-	GdkModifierType state;
+	//GdkModifierType state;
 	double geo_x, geo_y;
 	char s[256];
 
@@ -344,13 +344,18 @@ map_window_open_gpx(GtkAction *action, struct MapView *mapview)
 	gtk_file_filter_add_pattern(filter, "*");
 	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(dialog), filter);
 
-	gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(dialog), FALSE);
+	gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(dialog), TRUE);
 
 	if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT) {
-		char *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER (dialog));;
-		g_message("filename = %s", filename);
-		add_layers_from_gpx_file(mapview, filename);
-		g_free(filename);
+		GSList *filenames = gtk_file_chooser_get_filenames(GTK_FILE_CHOOSER (dialog));
+		GSList *iterator;
+		for(iterator = filenames; iterator != NULL; iterator = g_slist_next(iterator)) {
+			char *filename = iterator->data;
+			g_message("filename = %s", filename);
+			add_layers_from_gpx_file(mapview, filename);
+			g_free(filename);
+		}
+		g_slist_free(filenames);
 	}
 	gtk_widget_destroy (dialog);
 }
@@ -710,6 +715,7 @@ static const gchar *ui_info =
 "    <menuitem action='Zoom100'  />"
 "    <menuitem action='ZoomIn'  />"
 "    <menuitem action='ZoomOut' />"
+//"    <menuitem action='CopyCoordsWGS84Dec'>"
 "    <placeholder name='PopupToolsAddons'>"
 "    </placeholder>"
 "    <separator/>"
@@ -782,6 +788,7 @@ register_standard_tools(struct MapView *mapview) {
 
 	mapwindow_register_tool(mapview, &zoom_in_tool, mapview, TRUE, FALSE, TRUE);
 	mapwindow_register_tool(mapview, &zoom_out_tool, mapview, TRUE, FALSE, FALSE);
+	mapview_register_copy_coord_tool(mapview);
 }
 
 /*

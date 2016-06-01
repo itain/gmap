@@ -105,7 +105,7 @@ CopyTarget(struct RenderTarget *dest, struct RenderTarget *src) {
 void
 do_print(struct MapView *mapview) {
 	GtkPrintOperation *op;
-	GtkPrintOperationResult res;
+	//GtkPrintOperationResult res;
 	GError *err = NULL;
 	struct RenderTarget rt;
 
@@ -120,7 +120,7 @@ do_print(struct MapView *mapview) {
 	g_signal_connect(op, "begin-print", G_CALLBACK(begin_print_callback), &rt);
 	g_signal_connect(op, "draw-page", G_CALLBACK(draw_page_callback), &rt);
 
-	res = gtk_print_operation_run(op, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG, 
+	/*res =*/ gtk_print_operation_run(op, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG, 
 					GTK_WINDOW(mapview->window), &err);
 
 	/* DO not allow background-printing! */
